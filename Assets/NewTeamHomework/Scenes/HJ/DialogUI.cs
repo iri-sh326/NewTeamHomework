@@ -21,10 +21,16 @@ public class DialogUI : MonoBehaviour
     public TextMeshProUGUI sentenceText;
     //public GameObject npcImage;
     public GameObject nextButton;
+
+
+    public Animator teacher;
+    public int currentAnimIndex = 0;
+    public TextMeshProUGUI boardtext;
     #endregion
 
     private void Start()
     {
+        
         //xml 데이터 파일 읽기
         LoadDialogXml(xmlFile);
 
@@ -75,7 +81,7 @@ public class DialogUI : MonoBehaviour
         //npcImage.SetActive(false);
         nameText.text = "";
         sentenceText.text = "";
-
+        boardtext.text = "";
         nextButton.SetActive(false);
     }
 
@@ -105,6 +111,31 @@ public class DialogUI : MonoBehaviour
 
         nextButton.SetActive(false);
 
+        if(dialog.character == 1&& dialog.number ==1 )
+        { 
+            if(dialog.sentence == "자, 여기 보이는 작은 구체들이 각각 원자들이에요.")
+            {
+            currentAnimIndex++;
+            Anim(currentAnimIndex);
+             
+            }
+            if (dialog.sentence == "이런 결합을 공유 결합이라고 하는데, 원자들이 서로 전자를 나누며 강하게 연결되는 거랍니다.")
+            {
+                currentAnimIndex++;
+                Anim(currentAnimIndex);
+                boardtext.text = " H + O + O ";
+            }
+            if (dialog.sentence == "이제 여러분이 직접 수소 원자와 산소 원자를 가져와서 결합을 만들어보세요.")
+            {
+                currentAnimIndex++;
+                Anim(currentAnimIndex);
+            }
+
+
+
+
+        }
+            
         nameText.text = dialog.name;
         StartCoroutine(typingSentence(dialog.sentence));
         //sentenceText.text = dialog.sentence;
@@ -131,5 +162,10 @@ public class DialogUI : MonoBehaviour
 
         //대화 종료시 이벤트 처리
         //...
+    }
+
+    private void Anim(int index)
+    {
+        teacher.SetInteger("a",index);
     }
 }
