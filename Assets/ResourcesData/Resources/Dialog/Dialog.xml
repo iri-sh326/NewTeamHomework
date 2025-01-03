@@ -10,88 +10,88 @@
 		<number>0</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>수소 원자 두 개와 산소 원자 하나가 만나서 물 분자를 형성하는 과정을 직접 체험할 수 있습니다. 준비됐나요?"</sentence>
-	</Dialog>
-	<Dialog>
-		<number>0</number>
-		<character>1</character>
-		<name>선생님</name>
-		<sentence>자, 여기 보이는 작은 구체들이 각각 원자들이에요.</sentence>
-	</Dialog>
-	<Dialog>
-		<number>0</number>
-		<character>1</character>
-		<name>선생님</name>
-		<sentence>이 작은 하얀색 공들이 **수소 원자(H)**이고, 큰 빨간색 공이 **산소 원자(O)**입니다.</sentence>
-	</Dialog>
-	<Dialog>
-		<number>0</number>
-		<character>1</character>
-		<name>선생님</name>
-		<sentence>원자들은 너무 작아서 눈으로 볼 수 없지만, 우리가 이렇게 크게 만들어서 이해하기 쉽게 보여주는 거예요.</sentence>
-	</Dialog>
-	<Dialog>
-		<number>0</number>
-		<character>1</character>
-		<name>선생님</name>
-		<sentence>물 분자가 만들어지려면, 수소 원자 두 개와 산소 원자 하나가 결합해야 해요.</sentence>
-	</Dialog>
-	<Dialog>
-		<number>0</number>
-		<character>1</character>
-		<name>선생님</name>
-		<sentence>이런 결합을 공유 결합이라고 하는데, 원자들이 서로 전자를 나누며 강하게 연결되는 거랍니다.</sentence>
-	</Dialog>
-	<Dialog>
-		<number>0</number>
-		<character>1</character>
-		<name>선생님</name>
-		<sentence>이제 여러분이 직접 수소 원자와 산소 원자를 가져와서 결합을 만들어보세요.</sentence>
-	</Dialog>
-	<Dialog>
-		<number>0</number>
-		<character>1</character>
-		<name>선생님</name>
-		<sentence>양손으로 수소 원자를 집어서 산소 원자 근처로 가져다 놓으면 결합이 시작될 거예요!</sentence>
+		<sentence>수소 원자 두 개와 산소 원자 하나가 만나서 물 분자를 형성하는 과정을 직접 체험할 수 있습니다. 준비됐나요?</sentence>
 	</Dialog>
 	<Dialog>
 		<number>1</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>좋아요! 보세요, 전자가 서로 공유되면서 이렇게 새로운 결합이 만들어지는 거예요. 이제 하나의 수소 분자가 산소와 연결됐죠?</sentence>
+		<sentence>자, 여기 보이는 작은 구체들이 각각 원자들이에요.</sentence>
+	</Dialog>
+	<Dialog>
+		<number>1</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>이 작은 하얀색 공들이 **수소 원자(H)**이고, 큰 빨간색 공이 **산소 원자(O)**입니다.</sentence>
+	</Dialog>
+	<Dialog>
+		<number>1</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>원자들은 너무 작아서 눈으로 볼 수 없지만, 우리가 이렇게 크게 만들어서 이해하기 쉽게 보여주는 거예요.</sentence>
+	</Dialog>
+	<Dialog>
+		<number>1</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>물 분자가 만들어지려면, 수소 원자 두 개와 산소 원자 하나가 결합해야 해요.</sentence>
+	</Dialog>
+	<Dialog>
+		<number>1</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>이런 결합을 공유 결합이라고 하는데, 원자들이 서로 전자를 나누며 강하게 연결되는 거랍니다.</sentence>
+	</Dialog>
+	<Dialog>
+		<number>1</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>이제 여러분이 직접 수소 원자와 산소 원자를 가져와서 결합을 만들어보세요.</sentence>
+	</Dialog>
+	<Dialog>
+		<number>1</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>양손으로 수소 원자를 집어서 산소 원자 근처로 가져다 놓으면 결합이 시작될 거예요!</sentence>
 	</Dialog>
 	<Dialog>
 		<number>2</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>어, 잠깐만요! 지금 뭔가 이상한데요? 수소 두 개와 산소 하나가 연결돼야 하는데, 다른 구조가 나왔어요.</sentence>
+		<sentence>좋아요! 보세요, 전자가 서로 공유되면서 이렇게 새로운 결합이 만들어지는 거예요. 이제 하나의 수소 분자가 산소와 연결됐죠?</sentence>
 	</Dialog>
 	<Dialog>
 		<number>3</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>두 번째 수소 원자도 가져와서 연결해볼까요?</sentence>
+		<sentence>어, 잠깐만요! 지금 뭔가 이상한데요? 수소 두 개와 산소 하나가 연결돼야 하는데, 다른 구조가 나왔어요.</sentence>
 	</Dialog>
 	<Dialog>
 		<number>4</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>두 번째 수소 원자도 가져와서 연결해볼까요?</sentence>
+	</Dialog>
+	<Dialog>
+		<number>5</number>
 		<character>1</character>
 		<name>선생님</name>
 		<sentence>멋져요! 이제 수소 원자 두 개와 산소 원자 하나가 결합해서 완벽한 **물 분자(H₂O)**가 만들어졌어요.</sentence>
 	</Dialog>
 	<Dialog>
-		<number>4</number>
+		<number>5</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>이 결합 덕분에 물이 강한 분자 구조를 가지고, 우리가 매일 사용하는 중요한 물질이 된답니다!"</sentence>
+		<sentence>이 결합 덕분에 물이 강한 분자 구조를 가지고, 우리가 매일 사용하는 중요한 물질이 된답니다!</sentence>
 	</Dialog>
 	<Dialog>
-		<number>4</number>
+		<number>5</number>
 		<character>1</character>
 		<name>선생님</name>
 		<sentence>오늘 실험 재미있었나요? 화학은 이렇게 원자가 결합하면서 세상을 이루고 있다는 걸 알게 해줘요.</sentence>
 	</Dialog>
 	<Dialog>
-		<number>4</number>
+		<number>5</number>
 		<character>1</character>
 		<name>선생님</name>
 		<sentence>다음 시간에는 또 다른 분자나 화학 반응에 대해 알아보도록 해요. 모두 수고했어요!</sentence>

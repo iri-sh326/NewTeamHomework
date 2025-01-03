@@ -5,132 +5,131 @@ using System.Collections.Generic;
 using System.Xml;
 using TMPro;
 
-namespace NewTeamHomework
+
+
+public class DialogUI : MonoBehaviour
 {
-    public class DialogUI : MonoBehaviour
+    #region Variables
+    //XML
+    public string xmlFile = "Dialog/Dialog";    //Path
+    private XmlNodeList allNodes;
+
+    private Queue<Dialog> dialogs;
+
+    //UI
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI sentenceText;
+    //public GameObject npcImage;
+    public GameObject nextButton;
+    #endregion
+
+    private void Start()
     {
-        #region Variables
-        //XML
-        public string xmlFile = "Dialog/Dialog";    //Path
-        private XmlNodeList allNodes;
+        //xml 데이터 파일 읽기
+        LoadDialogXml(xmlFile);
 
-        private Queue<Dialog> dialogs;
+        dialogs = new Queue<Dialog>();
+        InitDialog();
 
-        //UI
-        public TextMeshProUGUI nameText;
-        public TextMeshProUGUI sentenceText;
-        //public GameObject npcImage;
-        public GameObject nextButton;
-        #endregion
+        StartDialog(0);
+    }
 
-        private void Start()
+    //Xml 데이터 읽어 들이기
+    private void LoadDialogXml(string path)
+    {
+        TextAsset xmlFile = Resources.Load<TextAsset>(path);
+
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(xmlFile.text);
+        allNodes = xmlDoc.SelectNodes("root/Dialog");
+    }
+
+    //대화 시작하기
+    public void StartDialog(int dialogIndex)
+    {
+        //현재 대화씬(dialogIndex) 내용을 큐에 입력
+        foreach (XmlNode node in allNodes)
         {
-            //xml 데이터 파일 읽기
-            LoadDialogXml(xmlFile);
-
-            dialogs = new Queue<Dialog>();
-            InitDialog();
-
-            StartDialog(0);
-        }
-
-        //Xml 데이터 읽어 들이기
-        private void LoadDialogXml(string path)
-        {
-            TextAsset xmlFile = Resources.Load<TextAsset>(path);
-
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xmlFile.text);
-            allNodes = xmlDoc.SelectNodes("root/Dialog");
-        }
-
-        //대화 시작하기
-        public void StartDialog(int dialogIndex)
-        {
-            //현재 대화씬(dialogIndex) 내용을 큐에 입력
-            foreach (XmlNode node in allNodes)
+            int num = int.Parse(node["number"].InnerText);
+            if (num == dialogIndex)
             {
-                int num = int.Parse(node["number"].InnerText);
-                if (num == dialogIndex)
-                {
-                    Dialog dialog = new Dialog();
-                    dialog.number = num;
-                    dialog.character = int.Parse(node["character"].InnerText);
-                    dialog.name = node["name"].InnerText;
-                    dialog.sentence = node["sentence"].InnerText;
+                Dialog dialog = new Dialog();
+                dialog.number = num;
+                dialog.character = int.Parse(node["character"].InnerText);
+                dialog.name = node["name"].InnerText;
+                dialog.sentence = node["sentence"].InnerText;
 
-                    dialogs.Enqueue(dialog);
-                }
+                dialogs.Enqueue(dialog);
             }
-
-            //첫번째 대화를 보여준다
-            DrawNextDialog();
         }
 
-        //초기화
-        private void InitDialog()
+        //첫번째 대화를 보여준다
+        DrawNextDialog();
+    }
+
+    //초기화
+    private void InitDialog()
+    {
+        dialogs.Clear();
+
+        //npcImage.SetActive(false);
+        nameText.text = "";
+        sentenceText.text = "";
+
+        nextButton.SetActive(false);
+    }
+
+
+    //다음 대화를 보여준다 - (큐)dialogs에서 하나 꺼내서 보여준다
+    public void DrawNextDialog()
+    {
+        //dialogs 체크
+        if (dialogs.Count == 0)
         {
-            dialogs.Clear();
-
-            //npcImage.SetActive(false);
-            nameText.text = "";
-            sentenceText.text = "";
-
-            nextButton.SetActive(false);
+            EndDialog();
+            return;
         }
 
+        //dialogs에서 하나 꺼내온다
+        Dialog dialog = dialogs.Dequeue();
 
-        //다음 대화를 보여준다 - (큐)dialogs에서 하나 꺼내서 보여준다
-        public void DrawNextDialog()
+        //if (dialog.character > 0)
+        //{
+        //    npcImage.SetActive(true);
+        //    npcImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Dialog/Npc/Npc0" + dialog.character.ToString());
+        //}
+        //else //dialog.character<=0
+        //{
+        //    npcImage.SetActive(false);
+        //}
+
+        nextButton.SetActive(false);
+
+        nameText.text = dialog.name;
+        StartCoroutine(typingSentence(dialog.sentence));
+        //sentenceText.text = dialog.sentence;
+    }
+
+    //텍스트 타이핑 연출
+    IEnumerator typingSentence(string typingText)
+    {
+        sentenceText.text = "";
+
+        foreach (char latter in typingText)
         {
-            //dialogs 체크
-            if (dialogs.Count == 0)
-            {
-                EndDialog();
-                return;
-            }
-
-            //dialogs에서 하나 꺼내온다
-            Dialog dialog = dialogs.Dequeue();
-
-            //if (dialog.character > 0)
-            //{
-            //    npcImage.SetActive(true);
-            //    npcImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Dialog/Npc/Npc0" + dialog.character.ToString());
-            //}
-            //else //dialog.character<=0
-            //{
-            //    npcImage.SetActive(false);
-            //}
-
-            nextButton.SetActive(false);
-
-            nameText.text = dialog.name;
-            StartCoroutine(typingSentence(dialog.sentence));
-            //sentenceText.text = dialog.sentence;
+            sentenceText.text += latter;
+            yield return new WaitForSeconds(0.03f);
         }
 
-        //텍스트 타이핑 연출
-        IEnumerator typingSentence(string typingText)
-        {
-            sentenceText.text = "";
+        nextButton.SetActive(true);
+    }
 
-            foreach (char latter in typingText)
-            {
-                sentenceText.text += latter;
-                yield return new WaitForSeconds(0.03f);
-            }
+    //대화 종료
+    private void EndDialog()
+    {
+        InitDialog();
 
-            nextButton.SetActive(true);
-        }
-
-        //대화 종료
-        private void EndDialog()
-        {
-            InitDialog();
-
-            //대화 종료시 이벤트 처리
-            //...
-        }
+        //대화 종료시 이벤트 처리
+        //...
     }
 }
