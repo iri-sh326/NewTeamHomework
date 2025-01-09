@@ -46,16 +46,16 @@
 		<number>2</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>양손으로 수소 원자를 집어서 산소 원자 근처로 가져다 놓으면 결합이 시작될 거예요!</sentence>
+		<sentence>양손으로 산소 원자를 집어서 수소 원자 근처로 가져다 놓으면 결합이 시작될 거예요!</sentence>
 	</Dialog>
 	<Dialog>
 		<number>3</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>좋아요! 보세요, 전자가 서로 공유되면서 이렇게 새로운 결합이 만들어지는 거예요. 이제 하나의 수소 분자가 산소와 연결됐죠?</sentence>
+		<sentence>공백</sentence>
 	</Dialog>
 	<Dialog>
-		<number>4</number>
+		<number>3</number>
 		<character>1</character>
 		<name>선생님</name>
 		<sentence>멋져요! 이제 수소 원자 두 개와 산소 원자 하나가 결합해서 완벽한 **물 분자(H₂O)**가 만들어졌어요.</sentence>
@@ -76,7 +76,19 @@
 		<number>5</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>이산화탄소는 직선 구조를 가지고 있어요. 그러니까 산소 원자 두 개가 탄소의 정확히 양옆에 위치해야 해요. 이 점을 꼭 기억하면서 만들어보세요.</sentence>
+		<sentence>이산화탄소는 직선 구조를 가지고 있어요. 그러니까 산소 원자 두 개가 탄소의 정확히 양옆에 위치해야 해요.</sentence>
+	</Dialog>
+	<Dialog>
+		<number>5</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>이 점을 꼭 기억하면서 자기 자리로 돌아가서 만들어보세요.</sentence>
+	</Dialog>
+	<Dialog>
+		<number>5</number>
+		<character>1</character>
+		<name>선생님</name>
+		<sentence>공백</sentence>
 	</Dialog>
 	<Dialog>
 		<number>6</number>
@@ -94,6 +106,6 @@
 		<number>7</number>
 		<character>1</character>
 		<name>선생님</name>
-		<sentence>어, 잠깐만요! 지금 뭔가 이상한데요? 다른 구조가 나왔어요.</sentence>
+		<sentence>어, 잠깐만요! 지금 뭔가 이상한데요? 게임이 클리어된 것 같아요! 축하해요!</sentence>
 	</Dialog>
 </root>

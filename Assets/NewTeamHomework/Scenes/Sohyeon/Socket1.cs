@@ -1,11 +1,8 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
 
-public class Socket : MonoBehaviour
+public class Socket1 : MonoBehaviour
 {
-    public Transform _transform;
-    public Canvas canvas;
-    public TextMeshProUGUI text;
     public GameObject ball_1;
     public GameObject ball_2;
     public GameObject ball_3;
@@ -13,11 +10,11 @@ public class Socket : MonoBehaviour
     public bool isCorrect_1;
     public bool isCorrect_2;
     public bool isCorrect_3;
-    
+
     public DialogUI dialogUI;
     public GameObject dialogUiCanvas;
-    private bool hasActivatedDialog = false; // »óÅÂ ÇÃ·¡±×
-    
+    private bool hasActivatedDialog = false; // ìƒíƒœ í”Œë˜ê·¸
+
     private void Update()
     {
         if(isCorrect_1 && isCorrect_2 && isCorrect_3 && !hasActivatedDialog)
@@ -25,13 +22,12 @@ public class Socket : MonoBehaviour
             hasActivatedDialog = true;
             dialogUI.waitForPlayerAction = false;
             dialogUI.stopFlag = false;
-            dialogUiCanvas.SetActive(true); // Äµ¹ö½º¸¦ ´Ù½Ã È°¼ºÈ­
-            dialogUiCanvas.transform.position = (_transform.position);
+            dialogUiCanvas.SetActive(true); // ìº”ë²„ìŠ¤ë¥¼ ë‹¤ì‹œ í™œì„±í™”
             dialogUI.DrawNextDialog();
         }
         else
         {
-            Debug.Log("¿À´ä");
+            Debug.Log("ì˜¤ë‹µ");
         }
     }
 }
